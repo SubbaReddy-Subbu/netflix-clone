@@ -19,6 +19,7 @@ export default NextAuth({
       clientSecret : process.env.GOOGLE_CLIENT_SECRET || " "
     }),
     Credentials({
+      id:'credentials',
       name: 'credentials',
       credentials: {
         email: { label: 'Email', type: 'text' },

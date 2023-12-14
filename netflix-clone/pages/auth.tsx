@@ -2,7 +2,7 @@ import Input from "@/components/Input"
 import axios from 'axios'
 import { useCallback, useEffect, useState } from "react";
 import { signIn } from "next-auth/react";
-import router from "next/router";
+// import router from "next/router";
 import {FcGoogle} from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
@@ -25,17 +25,17 @@ const auth = () => {
             await signIn('credentials', {
                 email,
                 password,
-                redirect: false,
-                callbackUrl: '/'
+                // redirect: false,
+                callbackUrl: '/profile'
                 
             });
 
-            router.push('/')
+            // router.push('/')
             console.log('ended')
         } catch (error) {
                 console.error('Authentication error:', error);
         }
-    }, [email, password,router]);
+    }, [email, password]);
 
 
       const register = useCallback(async () => {
@@ -89,8 +89,8 @@ const auth = () => {
                     </div>
                         <button onClick={variant === 'login' ? login : register} className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition' >{variant === 'login' ? 'Login' : 'Sign Up'}</button>
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
-                                <div onClick={() =>signIn('google',{callbackUrl: '/'})} className="w-10 h-10 bg-white flex justify-center  cursor-pointer hover:opacity-80 rounded-full transition "> <FcGoogle size={30} className="flex my-auto "/></div>
-                                <div onClick={() => signIn('github',{ callbackUrl: '/'})} className="w-10 h-10 bg-white flex justify-center cursor-pointer hover:opacity-80 rounded-full transition "> <FaGithub fill="black" stroke="black" size={30} className="flex my-auto "/></div>
+                                <div onClick={() =>signIn('google',{callbackUrl: '/profile'})} className="w-10 h-10 bg-white flex justify-center  cursor-pointer hover:opacity-80 rounded-full transition "> <FcGoogle size={30} className="flex my-auto "/></div>
+                                <div onClick={() => signIn('github',{ callbackUrl: '/profile'})} className="w-10 h-10 bg-white flex justify-center cursor-pointer hover:opacity-80 rounded-full transition "> <FaGithub fill="black" stroke="black" size={30} className="flex my-auto "/></div>
                                 
                         </div>
                         
