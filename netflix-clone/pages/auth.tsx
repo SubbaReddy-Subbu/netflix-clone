@@ -11,7 +11,7 @@ const auth = () => {
 
     const [email, setEmail] = useState(" ")
     const [password, setPassword] = useState("")
-    const [name, setUserName] = useState("")
+    const [name, setUsername] = useState("")
     const [variant , setVariant] = useState("login")
 
     // const toggleVariant = 
@@ -67,7 +67,7 @@ const auth = () => {
                         {variant === 'register' && (
                     <Input 
                         label="Username"
-                        onChange={(e: any)=>{setUserName(e.target.value)}}
+                        onChange={(e: any)=>{setUsername(e.target.value)}}
                         id="UserName"
                         type="text"
                         value={name}
