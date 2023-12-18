@@ -3,7 +3,7 @@ import React,{useCallback} from "react";
 import useInfoModal from '@/hooks/useInfoModel'
 import PlayButton from '@/components/PlayButton'
 
-import {AiOutlineInfoCircle} from 'react-icons/Ai'
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 const Billboard = () => {
   const { data } = useBillboard();
@@ -41,7 +41,7 @@ const Billboard = () => {
         <PlayButton movieId={data?.id}/>
         <button onClick={handleopenModal} className="bg-white flex text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex-row items-center hover:bg-opacity-20 transition"
         >
-            <AiOutlineInfoCircle  className="mr-1"/>More Info
+            <InformationCircleIcon  className="mr-1"/>More Info
         </button>
       </div>
       </div>

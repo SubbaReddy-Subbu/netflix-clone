@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillPlayFill } from "react-icons/bs";
+import { PlayIcon } from '@heroicons/react/24/solid';
 import { useRouter} from "next/router";
 
 interface PlayButtonProps{
@@ -15,7 +15,7 @@ const PlayButton : React.FC<PlayButtonProps> = ({movieId})=>{
         w-auto text-xs lg:text-lg font-semibold flex flex-row items-center
         hover:bg-neutral-300 transition
         ">
-            <BsFillPlayFill size={25} className='mr-1' strok='black' fill='black'/>
+            <PlayIcon stroke="black" fill="black" className='mr-1 w-[25px]' />
 
         </button>
     )

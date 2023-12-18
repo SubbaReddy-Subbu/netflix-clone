@@ -2,7 +2,7 @@ import { useCallback,useEffect,useState } from "react"
 import NavbarItem from "./NavbarItem"
 import AccountMenu from "./AccounMenu"
 import MobileMenu from "./MobileMenu"
-import {BsChevronDown , BsSearch , BsBell} from "react-icons/bs"
+import { BellIcon, MagnifyingGlassIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const TOP_OFFSET = 66 ;
 
@@ -50,21 +50,21 @@ const toggleAccountMenu = useCallback(()=>{
                 </div>
                 <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
                     <p className="text-white text-sm"> Browse</p>
-                    <BsChevronDown className={`text-white transition ${showMobileMenu ? 'rotate-180' : 'rotate-0'}`}/>
+                    <ChevronDownIcon className={`text-white transition ${showMobileMenu ? 'rotate-180' : 'rotate-0'}`}/>
                     <MobileMenu visible={showMobileMenu}/>
                 </div>
                 <div className="flex flex-row ml-auto gap-7 items-center">
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-                        <BsSearch className="" />
+                        <MagnifyingGlassIcon className="" />
                     </div>
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-                        <BsBell className="" />
+                        <BellIcon className="" />
                     </div>
                     <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 curser-pointer relative ">
                             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
                                 <img src="/Images/default-blue.png" alt="profile" />
                             </div>
-                            <BsChevronDown className={`text-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`}/>
+                            <ChevronDownIcon className={`text-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`}/>
                             <AccountMenu  visible={showAccountMenu}/>
                     </div>
                 </div>
