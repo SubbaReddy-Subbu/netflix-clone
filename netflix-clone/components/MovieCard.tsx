@@ -36,7 +36,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             <div className="flex flex-row items-center gap-3">
                 <div className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300"
                  onClick = {()=>router.push(`/watch/${data?.id}`)}><PlayIcon stroke="black" fill="black" /></div>
-                <FavoriteButton movieId={data?.id} />
+                <FavoriteButton  movieId={data?.id} />
                 <div onClick={()=>openModal(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 boredr-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300 lg:h-10">
                 <ChevronDownIcon className="text-white group-hover/item:text-nutral-300" />
                 </div>
